@@ -1,4 +1,3 @@
-do this gitignore ignores all the sensitve data before committing?
 node_modules/
 dist/
 build/

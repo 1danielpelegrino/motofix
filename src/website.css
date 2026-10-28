@@ -1,0 +1,400 @@
+/* Desktop website layout from the supplied MotoFix Website Version 1 Make file. */
+@media (min-width: 900px) {/* Website layout layer: the original MotoFix surfaces and workflows stay intact. */
+:root {
+  --web-bg: #082a4a;
+  --web-surface: #123f65;
+  --web-line: #31597c;
+  --web-text: #edf5ff;
+  --web-muted: #b4cde2;
+  --web-accent: #ffad76;
+  --web-sidebar: 232px;
+  --web-gutter: clamp(24px, 4vw, 64px);
+  --web-content: 1440px;
+}
+
+.app-stage {
+  display: block;
+  padding: 0;
+  min-height: 100dvh;
+  background: var(--web-bg);
+}
+
+.phone-shell {
+  width: 100%;
+  height: 100dvh;
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+}
+
+.phone-screen {
+  border-radius: 0;
+  background: var(--web-bg);
+}
+
+.screen {
+  padding: 64px 32px;
+  scrollbar-width: thin;
+}
+
+.phone-screen > .screen:not(.login-screen) {
+  width: min(100%, 760px);
+  margin: auto;
+}
+
+.login-screen {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-rows: 1fr auto;
+  align-items: center;
+  column-gap: clamp(64px, 10vw, 180px);
+  padding: clamp(40px, 8vh, 96px) max(48px, calc((100vw - 1160px) / 2));
+}
+
+.login-brand {
+  margin: 0;
+  text-align: left;
+  align-self: end;
+}
+
+.login-brand .logo-wrap {
+  width: 200px;
+  height: 200px;
+  margin: 0 0 40px;
+}
+
+.login-brand h1 {
+  font-size: clamp(36px, 4vw, 56px);
+  line-height: 1.15;
+  letter-spacing: -1.8px;
+}
+
+.login-brand p {
+  margin-top: 16px;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.login-screen > .auth-form {
+  grid-column: 2;
+  grid-row: 1 / 3;
+  align-self: center;
+  width: 100%;
+  padding: 40px;
+  border: 1px solid var(--web-line);
+  border-radius: 24px;
+  background: var(--web-bg);
+  box-shadow: 0 24px 64px #061a3040;
+  gap: 22px;
+}
+
+.login-screen .role-note {
+  margin: 0;
+  padding-top: 32px;
+  padding-bottom: 16vh;
+  text-align: left;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.screen-header h1 { font-size: 30px; }
+.screen-header p { font-size: 15px; }
+.field > span { font-size: 14px; }
+.role-copy strong { font-size: 16px; }
+.role-copy small, .info-card p, .terms, .bottom-actions p { font-size: 13px; }
+.role-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.role-card { flex-wrap: wrap; min-height: 190px; padding: 24px; }
+.role-copy { flex-basis: 70%; }
+.signup-form { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+.signup-form > :not(.field) { grid-column: 1 / -1; }
+.phone-screen > .screen:not(.login-screen) .auth-form:not(.signup-form),
+.center-copy { max-width: 520px; margin-inline: auto; }
+.reset-illustration { margin-top: 48px; }
+
+.so-app { padding-top: 0; }
+.so-content, .rider-content { scrollbar-width: thin; scrollbar-color: var(--web-line) transparent; }
+.so-dialog-backdrop, .mf-contact-overlay, .logout-modal-backdrop { position: fixed; }
+.so-dialog { width: min(560px, 100%); max-height: 85dvh; }
+.mf-conversation { max-width: 600px; max-height: 85dvh; }
+.logout-modal { max-width: 400px; }
+.logout-modal p { max-width: none; font-size: 13px; }
+
+.account-brand { display: none; }
+.account-brand img {
+  width: 54px;
+  height: 54px;
+  box-sizing: border-box;
+  padding: 5px;
+  background: white;
+  object-fit: contain;
+  border-radius: 17%;
+  flex-shrink: 0;
+}
+.so-header-logo { overflow: hidden; }
+.so-header-logo img {
+  box-sizing: border-box;
+  padding: 4px;
+  background: white;
+  border-radius: 17%;
+}
+.account-brand:focus-visible {
+  outline: 2px solid var(--web-accent);
+  outline-offset: 4px;
+  border-radius: 12px;
+}
+.account-brand:hover { color: var(--web-accent); }
+
+@media (max-width: 899px) {
+  .so-header-logo img { border-radius: 28.333%; }
+}
+
+@media (min-width: 900px) {
+  .so-app {
+    padding-left: var(--web-sidebar);
+  }
+
+  .so-header, .so-header.dashboard {
+    min-height: 94px;
+    padding: 20px var(--web-gutter);
+    border-bottom: 1px solid var(--so-line);
+    background: var(--so-bg);
+  }
+
+  .so-header h1 { font-size: 24px; }
+  .so-header p, .so-header-shop small { font-size: 12px; }
+  .so-header-shop > span { font-size: 10px; }
+  .so-header-shop > strong { font-size: 16px; }
+  .so-content, .mc-app .so-content {
+    padding: 32px var(--web-gutter) 48px;
+    width: 100%;
+    max-width: var(--web-content);
+    margin-inline: auto;
+  }
+
+  .so-bottom-nav, .mc-bottom-nav, .rider-workspace > nav {
+    position: absolute;
+    inset: 0 auto 0 0;
+    z-index: 10;
+    width: var(--web-sidebar);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 10px;
+    padding: 136px 20px 28px;
+    background: var(--web-bg);
+    border: 0;
+    border-right: 1px solid var(--web-line);
+  }
+
+  .account-brand {
+    position: absolute;
+    top: 28px;
+    left: 24px;
+    right: 20px;
+    height: 62px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+    color: var(--web-text);
+    font-family: "Manrope", sans-serif;
+    font-weight: 800;
+    font-size: 23px;
+    letter-spacing: -1px;
+  }
+
+  .so-bottom-nav .so-button, .mc-bottom-nav .so-button, .rider-workspace > nav > button {
+    position: relative;
+    width: 100%;
+    min-height: 52px;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 16px;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    font-size: 14px;
+    text-align: left;
+  }
+
+  .so-bottom-nav .so-button.active, .mc-bottom-nav .so-button.active,
+  .rider-workspace > nav > button[aria-current="page"] {
+    background: var(--web-surface);
+    border-color: var(--web-line);
+    color: var(--web-accent);
+  }
+
+  .so-bottom-nav .so-button.active::before, .mc-bottom-nav .so-button.active::before,
+  .so-bottom-nav .so-button i { display: none; }
+  .so-bottom-nav .so-button:hover, .mc-bottom-nav .so-button:hover,
+  .rider-workspace > nav > button:hover { background: var(--web-surface); }
+
+  .so-bottom-nav { gap: 18px; }
+  .so-bottom-nav .so-button {
+    min-height: 64px;
+    padding: 18px 16px;
+    gap: 16px;
+    font-size: 16px;
+  }
+  .so-bottom-nav .so-button > svg { width: 24px; height: 24px; }
+
+  .so-greeting h1, .mc-greeting h1 { font-size: 32px; }
+  .so-greeting > span, .mc-greeting > span { font-size: 11px; }
+  .so-greeting p, .mc-greeting p { font-size: 13px; }
+  .so-app h2 { font-size: 19px; }
+  .so-app h3 { font-size: 17px; }
+  .so-card { padding: 22px; border-radius: 18px; margin-bottom: 16px; }
+  .so-button { min-height: 40px; font-size: 13px; padding: 10px 15px; }
+  .so-icon { width: 42px; height: 42px; padding: 0; }
+  .so-person strong, .so-link-row strong, .so-team-row strong { font-size: 15px; }
+  .so-person small, .so-meta, .so-link-row small, .so-team-row small,
+  .so-booking-service, .so-muted, .so-progress-label { font-size: 12px; }
+  .so-badge { font-size: 11px; padding: 6px 10px; }
+  .so-actions .so-button, .so-section-heading .so-button { font-size: 12px; }
+  .so-section-heading { margin-bottom: 18px; }
+  .so-stat-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+  .so-stat { min-height: 132px; padding: 20px; gap: 10px; }
+  .so-stat > strong { font-size: 32px; }
+  .so-stat small { font-size: 12px; min-height: 0; }
+  .so-quick-actions { gap: 16px; padding: 0 0 24px; }
+  .so-quick-actions .so-button { flex-direction: row; justify-content: flex-start; font-size: 13px; }
+  .so-dashboard-hero { min-height: 260px; }
+  .so-dashboard-hero > div { padding: 30px; }
+  .so-dashboard-hero h2 { font-size: 30px; }
+  .so-dashboard-hero p { font-size: 14px; }
+
+  .so-app[data-page="dashboard"] .so-content {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: max-content;
+    gap: 24px;
+    align-content: start;
+    align-items: start;
+  }
+  .so-app[data-page="dashboard"] .so-content > :is(.so-greeting, .so-dashboard-hero, .so-stat-grid, .so-quick-actions, .so-end-mark, .mc-greeting, .mc-focus-card, .mc-stat-grid, .mc-access-grid) {
+    grid-column: 1 / -1;
+    margin: 0;
+  }
+  .so-app[data-page="dashboard"] .so-section { margin-top: 0; }
+  .mc-app[data-page="dashboard"] .so-content > .so-section-heading { grid-column: 1 / -1; margin-bottom: 0; }
+  .mc-app .mc-access-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .mc-stat-grid, .mc-access-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+  .mc-stat { min-height: 120px; }
+  .mc-stat span, .mc-access small, .mc-focus-card p, .mc-card-title small, .mc-card-meta { font-size: 12px; }
+  .mc-access strong, .mc-card-title strong { font-size: 15px; }
+  .mc-access.so-button { min-height: 120px; padding: 20px; }
+  .mc-focus-card { padding: 28px; }
+  .mc-focus-card > div { grid-template-columns: auto 1fr; }
+  .mc-focus-card span { font-size: 11px; }
+  .mc-focus-card strong { font-size: 48px; }
+  .so-field > span, .so-field input, .so-field textarea, .so-field select { font-size: 14px; }
+  .so-field small, .so-info dt, .so-info dd { font-size: 13px; }
+  .so-form { max-width: 840px; gap: 22px; }
+  .so-toast { position: fixed; left: auto; right: 32px; bottom: 28px; max-width: 440px; font-size: 13px; }
+
+  .rider-workspace { padding-left: var(--web-sidebar); }
+  .rider-content {
+    padding: 36px var(--web-gutter) 56px;
+    max-width: var(--web-content);
+    margin-inline: auto;
+  }
+  .rider-content > header { margin-bottom: 32px; }
+  .rider-content > header h1 { font-size: 26px; }
+  .rider-page-content { max-width: 1100px; margin-inline: auto; }
+  .rider-workspace[data-page="home"] .rider-page-content {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+    align-items: start;
+  }
+  .rider-workspace[data-page="home"] .rider-page-content > * { margin-block: 0; }
+  .rider-workspace[data-page="home"] .rider-page-content > :nth-child(-n+4),
+  .rider-workspace[data-page="home"] .rider-page-content > :nth-child(7) {
+    grid-column: 1 / -1;
+  }
+  .rider-workspace[data-page="home"] .rider-page-content > :first-child h1 { font-size: 36px; }
+  .rider-workspace[data-page="home"] .rider-page-content > :nth-child(2) { padding: 28px; }
+  .rider-workspace[data-page="home"] .rider-page-content > :nth-child(4) { gap: 16px; }
+  .rider-workspace[data-page="home"] .rider-page-content > :nth-child(4) > button {
+    flex-direction: row;
+    text-align: left;
+    padding: 16px;
+    border: 1px solid var(--web-line);
+    border-radius: 16px;
+    background: var(--web-surface);
+  }
+  .rider-workspace[data-page="home"] .rider-page-content > :nth-child(4) > button > span:last-child {
+    max-width: none;
+    font-size: 13px;
+  }
+  .rider-workspace[data-page="home"] .rider-page-content > :nth-child(7) > .space-y-3 {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+  .rider-workspace[data-page="home"] .rider-page-content > :nth-child(7) > .space-y-3 > * { margin-block: 0; }
+  .rider-content .text-xs { font-size: 14px; }
+  .rider-content .text-sm { font-size: 16px; }
+  .rider-content [class*="text-[10px]"], .rider-content [class*="text-[11px]"] { font-size: 12px; }
+  .rider-content .h-40 { height: 280px; }
+  .mf-contacts h3 { font-size: 17px; }
+  .mf-contact-row strong, .mf-message p { font-size: 14px; }
+  .mf-contact-caption, .mf-contact-row small, .mf-contact-row button span { font-size: 11px; }
+}
+
+@media (min-width: 900px) and (max-width: 1150px) {
+  :root { --web-sidebar: 200px; --web-gutter: 28px; }
+  .so-stat-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .rider-workspace[data-page="home"] .rider-page-content > :nth-child(4) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .mc-access-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 899px) {
+  .phone-speaker { display: none; }
+  .login-screen { display: flex; padding: 48px 24px; align-items: center; gap: 32px; }
+  .login-brand { align-self: center; text-align: center; }
+  .login-brand .logo-wrap { width: 120px; height: 120px; margin: 0 auto 24px; }
+  .login-brand h1 { font-size: 34px; }
+  .login-brand p { font-size: 15px; }
+  .login-screen > .auth-form { max-width: 480px; padding: 28px; }
+  .login-screen .role-note { padding: 0; text-align: center; }
+  .rider-content { padding-top: 28px; }
+  .so-header { padding-top: 20px; }
+}
+
+@media (max-width: 560px) {
+  .so-dashboard-hero .so-analytics-access {
+    min-height: 40px;
+    padding: 9px 12px;
+    font-size: 13px;
+  }
+  .screen { padding: 32px 24px; }
+  .signup-form, .role-list { grid-template-columns: 1fr; }
+  .role-card { flex-wrap: nowrap; min-height: 115px; padding: 16px; }
+  .role-copy { flex-basis: auto; }
+  .login-screen > .auth-form { padding: 24px 20px; }
+  .screen-header h1 { font-size: 25px; }
+}
+  /* These elements belong to the phone preview and are hidden on the desktop site. */
+  .phone-speaker,
+  .status-bar,
+  .home-indicator,
+  .stage-caption {
+    display: none;
+  }
+}
+
+/* Brand is part of the desktop sidebar, but stays out of the phone bottom nav. */
+@media (max-width: 899px) {
+  .account-brand {
+    display: none;
+  }
+}

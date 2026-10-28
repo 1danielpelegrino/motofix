@@ -1,0 +1,10 @@
+{
+  "description": "Connect motorcycle riders with local motorshops and mechanics through a user-friendly platform for seamless service scheduling and management.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

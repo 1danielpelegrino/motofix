@@ -1,0 +1,35 @@
+.branch-page { display: grid; gap: 24px; }
+.branch-page .so-primary { background: var(--so-orange); color: #09263f; border-color: var(--so-orange); font-weight: 700; }
+.branch-heading { display: flex; justify-content: space-between; align-items: center; gap: 18px; flex-wrap: wrap; }
+.branch-heading h2 { margin: 8px 0; }
+.branch-page .so-muted { font-size: 13px; line-height: 1.7; margin: 12px 0; }
+.branch-eyebrow { color: var(--so-orange); font-size: 11px; font-weight: 700; letter-spacing: 2px; }
+.branch-notice { padding: 16px; border: 1px solid var(--so-line); border-radius: 12px; color: var(--so-muted); font-size: 12px; line-height: 1.7; }
+.branch-stats, .branch-cards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.branch-stats > .so-card { display: grid; gap: 18px; margin: 0; }
+.branch-stats span { font-size: 12px; color: var(--so-muted); }
+.branch-stats strong { font-size: 28px; }
+.branch-cards { grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); }
+.so-card.branch-location { display: grid; align-content: start; gap: 14px; margin: 0; cursor: pointer; color: inherit; }
+.branch-location.selected { border-color: var(--so-orange); }
+.branch-location > svg { color: var(--so-orange); }
+.branch-location > span { display: flex; gap: 8px; align-items: start; font-size: 12px; line-height: 1.6; }
+.branch-location small, .branch-info dt { color: var(--so-muted); }
+.branch-status { color: var(--so-peach); }
+.branch-page label { display: grid; gap: 8px; font-size: 12px; color: var(--so-muted); }
+.branch-page input, .branch-page select { min-height: 44px; width: 100%; min-width: 0; padding: 12px; background: #123653; border: 1px solid var(--so-line); border-radius: 10px; color: white; }
+.branch-editor form, .branch-transfer { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; margin-top: 20px; }
+.branch-actions, .branch-tabs { display: flex; flex-wrap: wrap; gap: 12px; }
+.branch-tabs { border-bottom: 1px solid var(--so-line); padding: 20px 0; margin-bottom: 20px; }
+.branch-tabs button[aria-pressed="true"] { background: #ffad7620; color: var(--so-peach); border-color: var(--so-orange); }
+.branch-info { display: grid; gap: 20px; }
+.branch-info > div { display: grid; grid-template-columns: minmax(100px, 1fr) 2fr; gap: 20px; font-size: 13px; line-height: 1.6; }
+.branch-info dd { overflow-wrap: anywhere; }
+.branch-table { overflow-x: auto; }
+.branch-table table { width: 100%; border-collapse: collapse; text-align: left; font-size: 13px; }
+.branch-table th, .branch-table td { padding: 14px 12px; border-bottom: 1px solid var(--so-line); }
+.branch-table select { min-width: 170px; }
+.branch-subheading { display: flex; gap: 10px; align-items: center; margin: 28px 0 18px; }
+.branch-history { display: grid; gap: 10px; padding: 18px 0; border-bottom: 1px solid var(--so-line); font-size: 12px; }
+.branch-history small { color: var(--so-muted); }
+@media (max-width: 700px) { .branch-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } .branch-editor form, .branch-transfer { grid-template-columns: 1fr; } }

@@ -1,0 +1,23 @@
+{
+  "name": "MotoFix",
+  "short_name": "MotoFix",
+  "description": "Motorcycle repair bookings and shop management.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#071b30",
+  "theme_color": "#071b30",
+  "icons": [
+    {
+      "src": "/motofix-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/motofix-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

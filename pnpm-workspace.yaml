@@ -1,0 +1,3 @@
+storeDir: .pnpm-store
+nodeLinker: hoisted
+packageImportMethod: copy

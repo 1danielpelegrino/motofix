@@ -1,0 +1,66 @@
+do this gitignore ignores all the sensitve data before committing?
+node_modules/
+dist/
+build/
+.cache/
+.env*
+.vite/
+.pnpm-store/
+server/data/
+vite.config.*.timestamp-*
+*.tsbuildinfo
+*-debug.log*
+logs/
+*.log
+.claude-replay.*
+.tmp-*
+/.figma/design-context/
+
+# Platform-managed agentplat state, not project source. In the
+# client-initiated single-repo workspace layout (make's `Path: "."` spec) the
+# repo root IS the workspace root, so these land inside this repo rather than
+# beside it.
+/.plugins/
+/.opencode-skills/
+
+
+
+
+# Environment files and secrets
+.env
+
+# Dependencies
+vendor/
+
+# Logs and temporary files
+npm-debug.log*
+pnpm-debug.log*
+.DS_Store
+Thumbs.db
+
+# Local backups and database exports
+*.sql
+*.sql.gz
+*.bak
+*.backup
+
+# Private keys and certificates
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Additional credential files
+credentials.json
+secrets.json
+.aws/credentials
+id_rsa
+id_ed25519
+
+# Local configuration containing secrets
+config/secrets.*
+
+# Local database files
+*.sqlite
+*.sqlite3
+*.db
